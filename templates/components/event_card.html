@@ -1,7 +1,7 @@
-{% set cat_label = category_dict.get(event.category, ('Outro', '#6b7280')) %}
+{% set cat_label = category_dict.get(event.category, ('Outro', '#8a8279')) %}
 {% set cat_color = cat_label[1] %}
 {% set cat_name  = cat_label[0] %}
-{% set sta_label = status_dict.get(event.status, ('Planejado', '#94a3b8')) %}
+{% set sta_label = status_dict.get(event.status, ('Planejado', '#a09890')) %}
 {% set sta_color = sta_label[1] %}
 {% set sta_name  = sta_label[0] %}
 
@@ -19,17 +19,17 @@
   </div>
 
   <!-- Title -->
-  <h3 class="font-semibold text-base leading-snug" style="color:#0f172a;">
+  <h3 class="font-semibold text-base leading-snug" style="color:#2d2926;">
     <a href="{{ url_for('events_detail', event_id=event.id) }}"
        style="color:inherit; text-decoration:none;"
-       onmouseover="this.style.color='#3b82f6'"
-       onmouseout="this.style.color='#0f172a'">
+       onmouseover="this.style.color='#2e9e8f'"
+       onmouseout="this.style.color='#2d2926'">
       {{ event.title }}
     </a>
   </h3>
 
   <!-- Meta -->
-  <div class="space-y-1 text-sm" style="color:#64748b;">
+  <div class="space-y-1 text-sm" style="color:#857b72;">
     <div class="flex items-center gap-2">
       <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,18 +60,18 @@
 
   <!-- Description preview -->
   {% if event.description %}
-  <p class="text-sm line-clamp-2" style="color:#64748b;">{{ event.description }}</p>
+  <p class="text-sm line-clamp-2" style="color:#857b72;">{{ event.description }}</p>
   {% endif %}
 
   <!-- Actions -->
-  <div class="flex gap-2 mt-auto pt-2 border-t" style="border-color:#e2e8f0;">
+  <div class="flex gap-2 mt-auto pt-2 border-t" style="border-color:#e8e3dc;">
     <a href="{{ url_for('events_detail', event_id=event.id) }}"
        class="btn-secondary text-xs py-1.5 px-3 flex-1 justify-center">
       Ver detalhes
     </a>
     <a href="{{ url_for('events_edit', event_id=event.id) }}"
        class="btn-secondary text-xs py-1.5 px-3"
-       style="color:#3b82f6; border-color:#3b82f644;">
+       style="color:#2e9e8f; border-color:#2e9e8f44;">
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>

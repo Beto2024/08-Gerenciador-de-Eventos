@@ -1,15 +1,15 @@
 /* Custom styles for Gerenciador de Eventos */
 
 :root {
-  --bg-primary: #f8fafc;
+  --bg-primary: #faf8f6;
   --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --border: #e2e8f0;
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --accent-blue: #3b82f6;
-  --accent-violet: #8b5cf6;
-  --accent-gold: #f59e0b;
+  --bg-card-hover: #f5f2ed;
+  --border: #e8e3dc;
+  --text-primary: #2d2926;
+  --text-secondary: #857b72;
+  --accent-teal: #2e9e8f;
+  --accent-amber: #d4973a;
+  --accent-gold: #e0a642;
 }
 
 /* Smooth scrollbar */
@@ -27,7 +27,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -42,7 +42,7 @@ body {
 }
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: #cbd5e1;
+  border-color: #d5cfc7;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
@@ -59,10 +59,10 @@ body {
   outline: none;
 }
 .form-input:focus {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px rgba(46, 158, 143, 0.15);
 }
-.form-input::placeholder { color: #94a3b8; }
+.form-input::placeholder { color: #a09890; }
 
 /* Select */
 select.form-input option {
@@ -72,7 +72,7 @@ select.form-input option {
 
 /* Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
   color: white;
   border: none;
   border-radius: 8px;
@@ -103,14 +103,14 @@ select.form-input option {
   text-decoration: none;
 }
 .btn-secondary:hover {
-  border-color: #94a3b8;
+  border-color: #a09890;
   color: var(--text-primary);
 }
 
 .btn-danger {
   background: transparent;
-  color: #ef4444;
-  border: 1px solid #ef4444;
+  color: #d96a5a;
+  border: 1px solid #d96a5a;
   border-radius: 8px;
   padding: 10px 20px;
   cursor: pointer;
@@ -122,7 +122,7 @@ select.form-input option {
   text-decoration: none;
 }
 .btn-danger:hover {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(217, 106, 90, 0.1);
 }
 
 /* Badge */
@@ -146,7 +146,7 @@ select.form-input option {
   transition: background 0.15s;
 }
 .calendar-cell:hover { background: rgba(0,0,0,0.02); }
-.calendar-cell.today { border-color: var(--accent-blue); }
+.calendar-cell.today { border-color: var(--accent-teal); }
 .calendar-cell.other-month { opacity: 0.35; }
 .calendar-event {
   display: block;
@@ -167,8 +167,8 @@ select.form-input option {
 
 /* Navbar active link */
 .nav-link-active {
-  color: var(--accent-blue) !important;
-  border-bottom: 2px solid var(--accent-blue);
+  color: var(--accent-teal) !important;
+  border-bottom: 2px solid var(--accent-teal);
 }
 
 /* Alert / Flash */
@@ -182,14 +182,14 @@ select.form-input option {
   font-weight: 500;
 }
 .alert-success {
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #10b981;
+  background: rgba(79, 184, 150, 0.1);
+  border: 1px solid rgba(79, 184, 150, 0.3);
+  color: #4fb896;
 }
 .alert-error {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  color: #ef4444;
+  background: rgba(217, 106, 90, 0.1);
+  border: 1px solid rgba(217, 106, 90, 0.3);
+  color: #d96a5a;
 }
 
 /* Stats card gradient borders */
@@ -204,7 +204,7 @@ select.form-input option {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent-amber));
 }
 
 /* Pagination */
@@ -222,12 +222,12 @@ select.form-input option {
   transition: all 0.15s;
 }
 .page-btn:hover {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
 }
 .page-btn.active {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
+  background: var(--accent-teal);
+  border-color: var(--accent-teal);
   color: white;
 }
 
@@ -235,7 +235,7 @@ select.form-input option {
 .spinner {
   width: 20px; height: 20px;
   border: 2px solid rgba(0,0,0,0.1);
-  border-top-color: var(--accent-blue);
+  border-top-color: var(--accent-teal);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
