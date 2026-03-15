@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}Editar Evento – Gerenciador de Eventos{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+  <!-- Header -->
+  <div class="mb-8">
+    <a href="{{ url_for('events_detail', event_id=event.id) }}"
+       class="text-sm flex items-center gap-1 mb-4" style="color:#94a3b8;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      Voltar para detalhes
+    </a>
+    <h1 class="text-3xl font-bold gradient-text">Editar Evento</h1>
+    <p class="text-sm mt-1" style="color:#94a3b8;">Atualize os dados do evento</p>
+  </div>
+
+  <!-- Form -->
+  <form method="POST" action="{{ url_for('events_edit', event_id=event.id) }}" class="card p-6 space-y-5">
+
+    <!-- Title -->
+    <div>
+      <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">
+        Título <span style="color:#ef4444;">*</span>
+      </label>
+      <input type="text" name="title" required maxlength="200"
+             value="{{ event.title }}"
+             placeholder="Nome do evento"
+             class="form-input" />
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">Descrição</label>
+      <textarea name="description" rows="4" maxlength="2000"
+                placeholder="Descreva o evento..."
+                class="form-input resize-y">{{ event.description or '' }}</textarea>
+    </div>
+
+    <!-- Dates row -->
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">
+          Data de Início <span style="color:#ef4444;">*</span>
+        </label>
+        <input type="date" name="start_date" required
+               value="{{ event.start_date }}"
+               class="form-input" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">Data de Término</label>
+        <input type="date" name="end_date"
+               value="{{ event.end_date or '' }}"
+               class="form-input" />
+      </div>
+    </div>
+
+    <!-- Times row -->
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">Horário de Início</label>
+        <input type="time" name="start_time"
+               value="{{ event.start_time or '' }}"
+               class="form-input" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">Horário de Término</label>
+        <input type="time" name="end_time"
+               value="{{ event.end_time or '' }}"
+               class="form-input" />
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div>
+      <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">Local</label>
+      <input type="text" name="location" maxlength="300"
+             value="{{ event.location or '' }}"
+             placeholder="Endereço ou link online"
+             class="form-input" />
+    </div>
+
+    <!-- Category + Status -->
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">
+          Categoria <span style="color:#ef4444;">*</span>
+        </label>
+        <select name="category" class="form-input">
+          {% for slug, label, color in categories %}
+            <option value="{{ slug }}" {% if event.category == slug %}selected{% endif %}>
+              {{ label }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-2" style="color:#f1f5f9;">
+          Status <span style="color:#ef4444;">*</span>
+        </label>
+        <select name="status" class="form-input">
+          {% for slug, label, color in statuses %}
+            <option value="{{ slug }}" {% if event.status == slug %}selected{% endif %}>
+              {{ label }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex gap-3 pt-2 border-t" style="border-color:#334155;">
+      <button type="submit" class="btn-primary">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        Salvar Alterações
+      </button>
+      <a href="{{ url_for('events_detail', event_id=event.id) }}" class="btn-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

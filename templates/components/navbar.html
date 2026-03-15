@@ -1,0 +1,68 @@
+<nav class="border-b sticky top-0 z-50" style="background:#0f172a; border-color:#334155;">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="{{ url_for('index') }}" class="flex items-center gap-2 no-underline">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center"
+             style="background:linear-gradient(135deg,#3b82f6,#8b5cf6);">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <span class="font-bold text-lg gradient-text">EventosPro</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-1">
+        <a href="{{ url_for('index') }}"
+           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+           style="color:#94a3b8;"
+           onmouseover="this.style.color='#f1f5f9';this.style.background='rgba(255,255,255,0.05)'"
+           onmouseout="this.style.color='#94a3b8';this.style.background='transparent'">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </span>
+        </a>
+        <a href="{{ url_for('events_list') }}"
+           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+           style="color:#94a3b8;"
+           onmouseover="this.style.color='#f1f5f9';this.style.background='rgba(255,255,255,0.05)'"
+           onmouseout="this.style.color='#94a3b8';this.style.background='transparent'">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Eventos
+          </span>
+        </a>
+        <a href="{{ url_for('calendar_view') }}"
+           class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+           style="color:#94a3b8;"
+           onmouseover="this.style.color='#f1f5f9';this.style.background='rgba(255,255,255,0.05)'"
+           onmouseout="this.style.color='#94a3b8';this.style.background='transparent'">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Calendário
+          </span>
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <a href="{{ url_for('events_create') }}" class="btn-primary text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+        Novo Evento
+      </a>
+    </div>
+  </div>
+</nav>

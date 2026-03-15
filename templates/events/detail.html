@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}{{ event.title }} – Gerenciador de Eventos{% endblock %}
+
+{% block content %}
+{% set cat = category_dict.get(event.category, ('Outro', '#6b7280')) %}
+{% set sta = status_dict.get(event.status, ('Planejado', '#94a3b8')) %}
+
+<div class="max-w-3xl mx-auto">
+  <!-- Breadcrumb -->
+  <div class="flex items-center gap-2 text-sm mb-6" style="color:#94a3b8;">
+    <a href="{{ url_for('events_list') }}" style="color:#94a3b8; text-decoration:none;"
+       onmouseover="this.style.color='#f1f5f9'" onmouseout="this.style.color='#94a3b8'">Eventos</a>
+    <span>/</span>
+    <span style="color:#f1f5f9;">{{ event.title }}</span>
+  </div>
+
+  <!-- Main card -->
+  <div class="card p-8 mb-6">
+    <!-- Header -->
+    <div class="flex items-start justify-between gap-4 mb-6">
+      <div class="flex-1">
+        <!-- Badges -->
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="badge" style="background:{{ cat[1] }}22; color:{{ cat[1] }}; border:1px solid {{ cat[1] }}44;">
+            {{ cat[0] }}
+          </span>
+          <span class="badge" style="background:{{ sta[1] }}22; color:{{ sta[1] }};">
+            {{ sta[0] }}
+          </span>
+        </div>
+        <h1 class="text-2xl font-bold" style="color:#f1f5f9;">{{ event.title }}</h1>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex gap-2 flex-shrink-0">
+        <a href="{{ url_for('events_edit', event_id=event.id) }}" class="btn-secondary text-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          Editar
+        </a>
+        <form method="POST" action="{{ url_for('events_delete', event_id=event.id) }}"
+              class="confirm-delete inline">
+          <button type="submit" class="btn-danger text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+            Excluir
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Details grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <!-- Date -->
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#0f172a;">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+             style="background:rgba(59,130,246,0.15);">
+          <svg class="w-4 h-4" style="color:#3b82f6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#475569;">Data</p>
+          <p class="text-sm font-medium" style="color:#f1f5f9;">
+            {{ event.start_date | format_date }}
+            {% if event.end_date and event.end_date != event.start_date %}
+              <span style="color:#94a3b8;"> até {{ event.end_date | format_date }}</span>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Time -->
+      {% if event.start_time %}
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#0f172a;">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+             style="background:rgba(139,92,246,0.15);">
+          <svg class="w-4 h-4" style="color:#8b5cf6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#475569;">Horário</p>
+          <p class="text-sm font-medium" style="color:#f1f5f9;">
+            {{ event.start_time | format_time }}
+            {% if event.end_time %} – {{ event.end_time | format_time }}{% endif %}
+          </p>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Location -->
+      {% if event.location %}
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#0f172a;">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+             style="background:rgba(16,185,129,0.15);">
+          <svg class="w-4 h-4" style="color:#10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#475569;">Local</p>
+          <p class="text-sm font-medium" style="color:#f1f5f9;">{{ event.location }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Created at -->
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#0f172a;">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+             style="background:rgba(245,158,11,0.15);">
+          <svg class="w-4 h-4" style="color:#f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#475569;">Criado em</p>
+          <p class="text-sm font-medium" style="color:#f1f5f9;">{{ event.created_at[:10] | format_date }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    {% if event.description %}
+    <div class="border-t pt-6" style="border-color:#334155;">
+      <h3 class="text-sm font-semibold uppercase tracking-wide mb-3" style="color:#475569;">Descrição</h3>
+      <p class="text-sm leading-relaxed" style="color:#cbd5e1; white-space:pre-wrap;">{{ event.description }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Back link -->
+  <a href="{{ url_for('events_list') }}" class="btn-secondary text-sm inline-flex">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+    Voltar para lista
+  </a>
+</div>
+{% endblock %}
