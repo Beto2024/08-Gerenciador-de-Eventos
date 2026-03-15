@@ -1,0 +1,81 @@
+<form id="filter-form" method="GET" action="{{ url_for('events_list') }}"
+      class="card p-4 space-y-4">
+  <div class="flex flex-wrap gap-3 items-end">
+
+    <!-- Search -->
+    <div class="flex-1 min-w-48">
+      <label class="block text-xs font-semibold mb-1" style="color:#94a3b8;">Buscar</label>
+      <div class="relative">
+        <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2" style="color:#475569;"
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input type="text" name="search" id="search-input"
+               value="{{ filters.get('search', '') }}"
+               placeholder="Título ou descrição..."
+               class="form-input pl-9 text-sm" />
+      </div>
+    </div>
+
+    <!-- Category -->
+    <div class="min-w-40">
+      <label class="block text-xs font-semibold mb-1" style="color:#94a3b8;">Categoria</label>
+      <select name="category" id="category-filter" class="form-input text-sm">
+        <option value="">Todas</option>
+        {% for slug, label, color in categories %}
+          <option value="{{ slug }}" {% if filters.get('category') == slug %}selected{% endif %}>
+            {{ label }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Status -->
+    <div class="min-w-40">
+      <label class="block text-xs font-semibold mb-1" style="color:#94a3b8;">Status</label>
+      <select name="status" id="status-filter" class="form-input text-sm">
+        <option value="">Todos</option>
+        {% for slug, label, color in statuses %}
+          <option value="{{ slug }}" {% if filters.get('status') == slug %}selected{% endif %}>
+            {{ label }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Date from -->
+    <div class="min-w-36">
+      <label class="block text-xs font-semibold mb-1" style="color:#94a3b8;">De</label>
+      <input type="date" name="start_from" value="{{ filters.get('start_from', '') }}"
+             class="form-input text-sm" />
+    </div>
+
+    <!-- Date to -->
+    <div class="min-w-36">
+      <label class="block text-xs font-semibold mb-1" style="color:#94a3b8;">Até</label>
+      <input type="date" name="start_to" value="{{ filters.get('start_to', '') }}"
+             class="form-input text-sm" />
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex gap-2">
+      <button type="submit" class="btn-primary text-sm py-2 px-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+        </svg>
+        Filtrar
+      </button>
+      {% if filters.get('category') or filters.get('status') or filters.get('start_from') or filters.get('start_to') or filters.get('search') %}
+      <button type="button" id="clear-filters" class="btn-secondary text-sm py-2 px-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        Limpar
+      </button>
+      {% endif %}
+    </div>
+
+  </div>
+</form>
