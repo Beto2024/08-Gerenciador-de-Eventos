@@ -2,16 +2,16 @@
 {% block title %}{{ event.title }} – Gerenciador de Eventos{% endblock %}
 
 {% block content %}
-{% set cat = category_dict.get(event.category, ('Outro', '#8a8279')) %}
-{% set sta = status_dict.get(event.status, ('Planejado', '#a09890')) %}
+{% set cat = category_dict.get(event.category, ('Outro', '#64748b')) %}
+{% set sta = status_dict.get(event.status, ('Planejado', '#94a3b8')) %}
 
 <div class="max-w-3xl mx-auto">
   <!-- Breadcrumb -->
-  <div class="flex items-center gap-2 text-sm mb-6" style="color:#857b72;">
-    <a href="{{ url_for('events_list') }}" style="color:#857b72; text-decoration:none;"
-       onmouseover="this.style.color='#2d2926'" onmouseout="this.style.color='#857b72'">Eventos</a>
+  <div class="flex items-center gap-2 text-sm mb-6" style="color:#64748b;">
+    <a href="{{ url_for('events_list') }}" style="color:#64748b; text-decoration:none;"
+       onmouseover="this.style.color='#334155'" onmouseout="this.style.color='#64748b'">Eventos</a>
     <span>/</span>
-    <span style="color:#2d2926;">{{ event.title }}</span>
+    <span style="color:#334155;">{{ event.title }}</span>
   </div>
 
   <!-- Main card -->
@@ -28,7 +28,7 @@
             {{ sta[0] }}
           </span>
         </div>
-        <h1 class="text-2xl font-bold" style="color:#2d2926;">{{ event.title }}</h1>
+        <h1 class="text-2xl font-bold" style="color:#334155;">{{ event.title }}</h1>
       </div>
 
       <!-- Actions -->
@@ -56,20 +56,20 @@
     <!-- Details grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
       <!-- Date -->
-      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#faf8f6;">
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#f8f9fc;">
         <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-             style="background:rgba(46,158,143,0.15);">
-          <svg class="w-4 h-4" style="color:#2e9e8f;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             style="background:rgba(99,102,241,0.15);">
+          <svg class="w-4 h-4" style="color:#6366f1;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#a09890;">Data</p>
-          <p class="text-sm font-medium" style="color:#2d2926;">
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#94a3b8;">Data</p>
+          <p class="text-sm font-medium" style="color:#334155;">
             {{ event.start_date | format_date }}
             {% if event.end_date and event.end_date != event.start_date %}
-              <span style="color:#857b72;"> até {{ event.end_date | format_date }}</span>
+              <span style="color:#64748b;"> até {{ event.end_date | format_date }}</span>
             {% endif %}
           </p>
         </div>
@@ -77,17 +77,17 @@
 
       <!-- Time -->
       {% if event.start_time %}
-      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#faf8f6;">
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#f8f9fc;">
         <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-             style="background:rgba(212,151,58,0.15);">
-          <svg class="w-4 h-4" style="color:#d4973a;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             style="background:rgba(6,182,212,0.15);">
+          <svg class="w-4 h-4" style="color:#06b6d4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#a09890;">Horário</p>
-          <p class="text-sm font-medium" style="color:#2d2926;">
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#94a3b8;">Horário</p>
+          <p class="text-sm font-medium" style="color:#334155;">
             {{ event.start_time | format_time }}
             {% if event.end_time %} – {{ event.end_time | format_time }}{% endif %}
           </p>
@@ -97,43 +97,43 @@
 
       <!-- Location -->
       {% if event.location %}
-      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#faf8f6;">
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#f8f9fc;">
         <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-             style="background:rgba(79,184,150,0.15);">
-          <svg class="w-4 h-4" style="color:#4fb896;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             style="background:rgba(16,185,129,0.15);">
+          <svg class="w-4 h-4" style="color:#10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#a09890;">Local</p>
-          <p class="text-sm font-medium" style="color:#2d2926;">{{ event.location }}</p>
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#94a3b8;">Local</p>
+          <p class="text-sm font-medium" style="color:#334155;">{{ event.location }}</p>
         </div>
       </div>
       {% endif %}
 
       <!-- Created at -->
-      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#faf8f6;">
+      <div class="flex items-start gap-3 p-3 rounded-lg" style="background:#f8f9fc;">
         <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-             style="background:rgba(224,166,66,0.15);">
-          <svg class="w-4 h-4" style="color:#e0a642;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             style="background:rgba(245,158,11,0.15);">
+          <svg class="w-4 h-4" style="color:#f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#a09890;">Criado em</p>
-          <p class="text-sm font-medium" style="color:#2d2926;">{{ event.created_at[:10] | format_date }}</p>
+          <p class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:#94a3b8;">Criado em</p>
+          <p class="text-sm font-medium" style="color:#334155;">{{ event.created_at[:10] | format_date }}</p>
         </div>
       </div>
     </div>
 
     <!-- Description -->
     {% if event.description %}
-    <div class="border-t pt-6" style="border-color:#e8e3dc;">
-      <h3 class="text-sm font-semibold uppercase tracking-wide mb-3" style="color:#a09890;">Descrição</h3>
-      <p class="text-sm leading-relaxed" style="color:#3d3632; white-space:pre-wrap;">{{ event.description }}</p>
+    <div class="border-t pt-6" style="border-color:#e2e8f0;">
+      <h3 class="text-sm font-semibold uppercase tracking-wide mb-3" style="color:#94a3b8;">Descrição</h3>
+      <p class="text-sm leading-relaxed" style="color:#475569; white-space:pre-wrap;">{{ event.description }}</p>
     </div>
     {% endif %}
   </div>
