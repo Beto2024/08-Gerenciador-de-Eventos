@@ -6,7 +6,7 @@
 <div class="flex items-center justify-between mb-6">
   <div>
     <h1 class="text-3xl font-bold gradient-text">Eventos</h1>
-    <p class="text-sm mt-1" style="color:#64748b;">
+    <p class="text-sm mt-1" style="color:#857b72;">
       {{ total }} evento{{ 's' if total != 1 }} encontrado{{ 's' if total != 1 }}
     </p>
   </div>
@@ -45,7 +45,7 @@
           <a href="{{ url_for('events_list', page=p, category=filters.category, status=filters.status, start_from=filters.start_from, start_to=filters.start_to, search=filters.search) }}"
              class="page-btn">{{ p }}</a>
         {% elif p == page - 3 or p == page + 3 %}
-          <span class="page-btn" style="cursor:default; border:none; color:#475569;">…</span>
+          <span class="page-btn" style="cursor:default; border:none; color:#5a524b;">…</span>
         {% endif %}
       {% endfor %}
 
@@ -63,8 +63,8 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
       </svg>
-      <h3 class="text-lg font-semibold mb-2" style="color:#0f172a;">Nenhum evento encontrado</h3>
-      <p class="text-sm mb-6" style="color:#64748b;">
+      <h3 class="text-lg font-semibold mb-2" style="color:#2d2926;">Nenhum evento encontrado</h3>
+      <p class="text-sm mb-6" style="color:#857b72;">
         Tente ajustar os filtros ou crie um novo evento.
       </p>
       <div class="flex gap-3 justify-center">
