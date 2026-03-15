@@ -1,15 +1,15 @@
 /* Custom styles for Gerenciador de Eventos */
 
 :root {
-  --bg-primary: #faf8f6;
+  --bg-primary: #f8f9fc;
   --bg-card: #ffffff;
-  --bg-card-hover: #f5f2ed;
-  --border: #e8e3dc;
-  --text-primary: #2d2926;
-  --text-secondary: #857b72;
-  --accent-teal: #2e9e8f;
-  --accent-amber: #d4973a;
-  --accent-gold: #e0a642;
+  --bg-card-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --text-primary: #334155;
+  --text-secondary: #64748b;
+  --accent-teal: #6366f1;
+  --accent-amber: #06b6d4;
+  --accent-gold: #f59e0b;
 }
 
 /* Smooth scrollbar */
@@ -42,7 +42,7 @@ body {
 }
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: #d5cfc7;
+  border-color: #cbd5e1;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
@@ -60,9 +60,9 @@ body {
 }
 .form-input:focus {
   border-color: var(--accent-teal);
-  box-shadow: 0 0 0 3px rgba(46, 158, 143, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
-.form-input::placeholder { color: #a09890; }
+.form-input::placeholder { color: #94a3b8; }
 
 /* Select */
 select.form-input option {
@@ -103,14 +103,14 @@ select.form-input option {
   text-decoration: none;
 }
 .btn-secondary:hover {
-  border-color: #a09890;
+  border-color: #94a3b8;
   color: var(--text-primary);
 }
 
 .btn-danger {
   background: transparent;
-  color: #d96a5a;
-  border: 1px solid #d96a5a;
+  color: #ef4444;
+  border: 1px solid #ef4444;
   border-radius: 8px;
   padding: 10px 20px;
   cursor: pointer;
@@ -122,7 +122,7 @@ select.form-input option {
   text-decoration: none;
 }
 .btn-danger:hover {
-  background: rgba(217, 106, 90, 0.1);
+  background: rgba(239, 68, 68, 0.1);
 }
 
 /* Badge */
@@ -182,14 +182,14 @@ select.form-input option {
   font-weight: 500;
 }
 .alert-success {
-  background: rgba(79, 184, 150, 0.1);
-  border: 1px solid rgba(79, 184, 150, 0.3);
-  color: #4fb896;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
 }
 .alert-error {
-  background: rgba(217, 106, 90, 0.1);
-  border: 1px solid rgba(217, 106, 90, 0.3);
-  color: #d96a5a;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
 }
 
 /* Stats card gradient borders */

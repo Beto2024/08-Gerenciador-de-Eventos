@@ -156,6 +156,48 @@ SEED_EVENTS = [
         'Iate Clube Petrolina, Petrolina - PE',
         'esportivo', 'confirmado'
     ),
+    (
+        'Meetup de Startups em Florianópolis',
+        'Encontro mensal da comunidade empreendedora de Floripa. Pitches de startups, networking e troca de experiências no ecossistema de inovação catarinense.',
+        '2026-04-09', '2026-04-09', '19:00', '22:00',
+        'ACATE - Associação Catarinense de Tecnologia, Florianópolis - SC',
+        'meetup', 'planejado'
+    ),
+    (
+        'Webinar: Astroturismo no Sertão Nordestino',
+        'Transmissão ao vivo sobre os melhores destinos para observação astronômica no sertão do Nordeste. Dicas de equipamentos, melhores épocas e roteiros.',
+        '2026-05-15', '2026-05-15', '20:00', '21:30',
+        'Online - YouTube Live',
+        'webinar', 'planejado'
+    ),
+    (
+        'Festival de Parintins 2026',
+        'O maior festival folclórico do Brasil. Três noites mágicas com os bois Garantido e Caprichoso no Bumbódromo de Parintins.',
+        '2026-06-26', '2026-06-28', '19:00', '02:00',
+        'Bumbódromo, Parintins - AM',
+        'cultural', 'confirmado'
+    ),
+    (
+        'Oktoberfest de Blumenau 2026',
+        'A maior festa alemã das Américas. 18 dias de cerveja artesanal, gastronomia germânica, música e danças típicas no coração de Santa Catarina.',
+        '2026-10-07', '2026-10-25', '17:00', '23:00',
+        'Parque Vila Germânica, Blumenau - SC',
+        'festa', 'confirmado'
+    ),
+    (
+        'Trilha do Ouro em Paraty',
+        'Caminhada histórica de 3 dias pelo Caminho do Ouro, trilha colonial de pedra que ligava as minas de Minas Gerais ao porto de Paraty.',
+        '2026-05-22', '2026-05-24', '07:00', '17:00',
+        'Centro Histórico de Paraty - RJ',
+        'viagem', 'planejado'
+    ),
+    (
+        'Meia Maratona de Florianópolis',
+        'Corrida de 21km com percurso costeiro passando pela Beira-Mar Norte, ponte Hercílio Luz e as praias mais belas da ilha da magia.',
+        '2026-06-14', '2026-06-14', '06:00', '12:00',
+        'Beira-Mar Norte, Florianópolis - SC',
+        'esportivo', 'planejado'
+    ),
 ]
 
 

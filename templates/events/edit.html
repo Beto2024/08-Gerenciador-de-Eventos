@@ -6,14 +6,14 @@
   <!-- Header -->
   <div class="mb-8">
     <a href="{{ url_for('events_detail', event_id=event.id) }}"
-       class="text-sm flex items-center gap-1 mb-4" style="color:#857b72;">
+       class="text-sm flex items-center gap-1 mb-4" style="color:#64748b;">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
       </svg>
       Voltar para detalhes
     </a>
     <h1 class="text-3xl font-bold gradient-text">Editar Evento</h1>
-    <p class="text-sm mt-1" style="color:#857b72;">Atualize os dados do evento</p>
+    <p class="text-sm mt-1" style="color:#64748b;">Atualize os dados do evento</p>
   </div>
 
   <!-- Form -->
@@ -21,8 +21,8 @@
 
     <!-- Title -->
     <div>
-      <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">
-        Título <span style="color:#d96a5a;">*</span>
+      <label class="block text-sm font-semibold mb-2" style="color:#334155;">
+        Título <span style="color:#ef4444;">*</span>
       </label>
       <input type="text" name="title" required maxlength="200"
              value="{{ event.title }}"
@@ -32,7 +32,7 @@
 
     <!-- Description -->
     <div>
-      <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">Descrição</label>
+      <label class="block text-sm font-semibold mb-2" style="color:#334155;">Descrição</label>
       <textarea name="description" rows="4" maxlength="2000"
                 placeholder="Descreva o evento..."
                 class="form-input resize-y">{{ event.description or '' }}</textarea>
@@ -41,15 +41,15 @@
     <!-- Dates row -->
     <div class="grid grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">
-          Data de Início <span style="color:#d96a5a;">*</span>
+        <label class="block text-sm font-semibold mb-2" style="color:#334155;">
+          Data de Início <span style="color:#ef4444;">*</span>
         </label>
         <input type="date" name="start_date" required
                value="{{ event.start_date }}"
                class="form-input" />
       </div>
       <div>
-        <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">Data de Término</label>
+        <label class="block text-sm font-semibold mb-2" style="color:#334155;">Data de Término</label>
         <input type="date" name="end_date"
                value="{{ event.end_date or '' }}"
                class="form-input" />
@@ -59,13 +59,13 @@
     <!-- Times row -->
     <div class="grid grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">Horário de Início</label>
+        <label class="block text-sm font-semibold mb-2" style="color:#334155;">Horário de Início</label>
         <input type="time" name="start_time"
                value="{{ event.start_time or '' }}"
                class="form-input" />
       </div>
       <div>
-        <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">Horário de Término</label>
+        <label class="block text-sm font-semibold mb-2" style="color:#334155;">Horário de Término</label>
         <input type="time" name="end_time"
                value="{{ event.end_time or '' }}"
                class="form-input" />
@@ -74,7 +74,7 @@
 
     <!-- Location -->
     <div>
-      <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">Local</label>
+      <label class="block text-sm font-semibold mb-2" style="color:#334155;">Local</label>
       <input type="text" name="location" maxlength="300"
              value="{{ event.location or '' }}"
              placeholder="Endereço ou link online"
@@ -84,8 +84,8 @@
     <!-- Category + Status -->
     <div class="grid grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">
-          Categoria <span style="color:#d96a5a;">*</span>
+        <label class="block text-sm font-semibold mb-2" style="color:#334155;">
+          Categoria <span style="color:#ef4444;">*</span>
         </label>
         <select name="category" class="form-input">
           {% for slug, label, color in categories %}
@@ -96,8 +96,8 @@
         </select>
       </div>
       <div>
-        <label class="block text-sm font-semibold mb-2" style="color:#2d2926;">
-          Status <span style="color:#d96a5a;">*</span>
+        <label class="block text-sm font-semibold mb-2" style="color:#334155;">
+          Status <span style="color:#ef4444;">*</span>
         </label>
         <select name="status" class="form-input">
           {% for slug, label, color in statuses %}
@@ -110,7 +110,7 @@
     </div>
 
     <!-- Actions -->
-    <div class="flex gap-3 pt-2 border-t" style="border-color:#e8e3dc;">
+    <div class="flex gap-3 pt-2 border-t" style="border-color:#e2e8f0;">
       <button type="submit" class="btn-primary">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
