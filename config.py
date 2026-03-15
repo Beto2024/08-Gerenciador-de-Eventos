@@ -16,6 +16,9 @@ CATEGORIES = [
     ('social', 'Social', '#ec4899'),
     ('esportivo', 'Esportivo', '#ef4444'),
     ('cultural', 'Cultural', '#f97316'),
+    ('show', 'Show/Festival', '#a855f7'),
+    ('viagem', 'Viagem/Passeio', '#06b6d4'),
+    ('festa', 'Festa/Celebração', '#f43f5e'),
     ('outro', 'Outro', '#6b7280'),
 ]
 

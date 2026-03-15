@@ -24,109 +24,123 @@ CREATE TABLE IF NOT EXISTS events (
 
 SEED_EVENTS = [
     (
-        'PyCon Brasil 2026',
-        'A maior conferência de Python do Brasil. Palestras, workshops e networking com desenvolvedores de todo o país.',
-        '2026-03-20', '2026-03-22', '09:00', '18:00',
-        'Centro de Convenções Frei Caneca, São Paulo - SP',
-        'conferencia', 'confirmado'
+        'Carnatal 2026',
+        'O maior carnaval fora de época do Brasil. Três dias de festa com os melhores artistas do axé, forró e pagode nas ruas de Natal.',
+        '2026-06-11', '2026-06-14', '18:00', '04:00',
+        'Parque de Exposições, Natal - RN',
+        'festa', 'confirmado'
     ),
     (
-        'Workshop de Flask e APIs REST',
-        'Workshop prático sobre criação de APIs REST com Flask, SQLAlchemy e boas práticas de desenvolvimento.',
-        '2026-03-18', '2026-03-18', '14:00', '17:00',
-        'Online - Google Meet',
-        'workshop', 'confirmado'
+        'Réveillon de Ponta Negra',
+        'Festa de Ano Novo na praia mais famosa de Natal, com show pirotécnico, atrações musicais ao vivo e muito forró na areia.',
+        '2026-02-28', '2026-02-28', '20:00', '04:00',
+        'Praia de Ponta Negra, Natal - RN',
+        'festa', 'confirmado'
     ),
     (
-        'Meetup Python SP - Março',
-        'Encontro mensal da comunidade Python de São Paulo. Talks sobre machine learning e automação.',
-        '2026-03-25', '2026-03-25', '19:00', '22:00',
-        'Google Brasil, São Paulo - SP',
-        'meetup', 'planejado'
+        'Circuito de Surf de Pipa',
+        'Etapa nordestina do campeonato brasileiro de surf. Ondas perfeitas e competição de alto nível na praia mais bonita do RN.',
+        '2026-03-06', '2026-03-08', '07:00', '17:00',
+        'Praia da Pipa, Tibau do Sul - RN',
+        'esportivo', 'confirmado'
     ),
     (
-        'Webinar: Introdução ao FastAPI',
-        'Webinar gratuito sobre FastAPI, o framework moderno para criação de APIs em Python.',
-        '2026-03-28', '2026-03-28', '20:00', '21:30',
-        'Online - YouTube Live',
-        'webinar', 'planejado'
+        'Show: Alceu Valença na Arena das Dunas',
+        'Show imperdível do rei do frevo e da música pernambucana na moderna arena multiuso de Natal.',
+        '2026-03-21', '2026-03-21', '20:00', '23:30',
+        'Arena das Dunas, Natal - RN',
+        'show', 'confirmado'
     ),
     (
-        'Hackathon de Inteligência Artificial',
-        '48 horas de desafios de IA. Equipes de até 4 pessoas. Prêmios para os 3 primeiros lugares.',
-        '2026-04-04', '2026-04-06', '08:00', '20:00',
-        'Campus Party Brasil, São Paulo - SP',
-        'conferencia', 'planejado'
+        'Passeio de Buggy pelas Dunas',
+        'Aventura de buggy pelas dunas do litoral norte do RN, saindo de Genipabu até Maracajaú. Inclui parada nas lagoas e morro do careca.',
+        '2026-04-04', '2026-04-05', '08:00', '17:00',
+        'Dunas de Genipabu, Extremoz - RN',
+        'viagem', 'planejado'
     ),
     (
-        'Workshop: Docker e Kubernetes na Prática',
-        'Aprenda a containerizar aplicações e orquestrar com Kubernetes em ambiente de produção.',
-        '2026-04-10', '2026-04-11', '09:00', '17:00',
-        'Alura, São Paulo - SP',
-        'workshop', 'planejado'
+        'São João de Caruaru 2026',
+        'O maior São João do mundo! Quadrilhas, forró pé de serra, comidas típicas e toda a magia do maior arraial do Brasil.',
+        '2026-06-10', '2026-06-24', '18:00', '02:00',
+        'Pátio de Eventos Luiz Gonzaga, Caruaru - PE',
+        'festa', 'confirmado'
     ),
     (
-        'JS Conf Brasil 2026',
-        'Conferência nacional de JavaScript. Front-end, Node.js, TypeScript e as últimas tendências do ecossistema JS.',
-        '2026-04-15', '2026-04-17', '09:00', '19:00',
-        'Hotel Maksoud Plaza, São Paulo - SP',
-        'conferencia', 'planejado'
+        'Rock in Rio 2026',
+        'O maior festival de música do mundo retorna ao Rio de Janeiro com lineup internacional de peso. Sete dias de rock, pop e muito mais.',
+        '2026-07-11', '2026-07-19', '14:00', '02:00',
+        'Cidade do Rock, Rio de Janeiro - RJ',
+        'show', 'confirmado'
     ),
     (
-        'Corrida Tech 5K',
-        'Corrida solidária organizada pela comunidade tech. Percurso de 5km pelo Parque Ibirapuera.',
-        '2026-04-19', '2026-04-19', '07:00', '10:00',
-        'Parque Ibirapuera, São Paulo - SP',
+        'Carnaval de Salvador 2026',
+        'O maior carnaval de rua do planeta. Circuitos Osmar, Dodô e Batatinha com trios elétricos e mais de 2 milhões de foliões.',
+        '2026-02-14', '2026-02-21', '14:00', '04:00',
+        'Circuito Osmar (Campo Grande), Salvador - BA',
+        'festa', 'confirmado'
+    ),
+    (
+        'Maratona de Natal',
+        'Corrida de rua com percurso de 42km pela orla de Natal, passando por Ponta Negra, Areia Preta e a Via Costeira.',
+        '2026-04-19', '2026-04-19', '05:30', '12:00',
+        'Via Costeira, Natal - RN',
         'esportivo', 'planejado'
     ),
     (
-        'Show de Rock Beneficente',
-        'Show beneficente com bandas locais. Renda revertida para projetos de inclusão digital.',
-        '2026-03-29', '2026-03-29', '19:00', '23:00',
-        'Audio Club, São Paulo - SP',
-        'cultural', 'confirmado'
+        'Exposição Fotográfica: Nordeste Vivo',
+        'Mostra fotográfica que retrata a cultura, o povo e as paisagens do Nordeste brasileiro. Com obras de fotógrafos locais e nacionais.',
+        '2026-05-02', '2026-05-31', '09:00', '18:00',
+        'Centro Cultural do Brasil, Natal - RN',
+        'cultural', 'planejado'
     ),
     (
-        'Meetup UX/UI Design',
-        'Encontro para designers e desenvolvedores front-end. Tema: Design Systems e acessibilidade.',
-        '2026-04-02', '2026-04-02', '18:30', '21:00',
-        'WeWork Paulista, São Paulo - SP',
-        'meetup', 'planejado'
+        'Festival Literário de Paraty (FLIP)',
+        'Um dos maiores festivais literários do mundo. Debates, lançamentos e encontros com grandes nomes da literatura nacional e internacional.',
+        '2026-07-01', '2026-07-05', '10:00', '22:00',
+        'Centro Histórico de Paraty, Paraty - RJ',
+        'cultural', 'planejado'
     ),
     (
-        'Webinar: Segurança em Aplicações Web',
-        'Como proteger suas aplicações contra OWASP Top 10. Exemplos práticos com Python e Flask.',
-        '2026-04-08', '2026-04-08', '19:00', '20:30',
-        'Online - Zoom',
-        'webinar', 'planejado'
+        'Passeio a Fernando de Noronha',
+        'Viagem ao paraíso ecológico de Fernando de Noronha. Snorkeling, mergulho, caminhadas e contato com a natureza preservada.',
+        '2026-05-09', '2026-05-13', '07:00', '20:00',
+        'Fernando de Noronha - PE',
+        'viagem', 'planejado'
     ),
     (
-        'Confraternização da Equipe Dev',
-        'Happy hour e jantar de integração da equipe de desenvolvimento. Celebrando os resultados do Q1 2026.',
-        '2026-03-27', '2026-03-27', '19:00', '23:00',
-        'Restaurante Spot, São Paulo - SP',
-        'social', 'confirmado'
-    ),
-    (
-        'DevFest São Paulo 2026',
-        'Google Developer Festival com palestras sobre Android, Flutter, Firebase, Google Cloud e muito mais.',
-        '2026-05-02', '2026-05-03', '09:00', '18:00',
-        'FIAP, São Paulo - SP',
+        'Python Nordeste 2026',
+        'A maior conferência regional de Python do Nordeste. Palestras, workshops e hackathon para devs de todos os níveis.',
+        '2026-06-06', '2026-06-07', '09:00', '18:00',
+        'Universidade Federal do RN (UFRN), Natal - RN',
         'conferencia', 'planejado'
     ),
     (
-        'Workshop de Tailwind CSS',
-        'Aprenda a criar interfaces modernas com Tailwind CSS. Do básico ao avançado com projetos reais.',
-        '2026-03-16', '2026-03-16', '09:00', '13:00',
-        'Online - Discord',
-        'workshop', 'em_andamento'
+        'Clássico ABC x América no Frasqueirão',
+        'Derby potiguar entre ABC e América-RN no estádio Juvenal Lamartine. Rivalidade histórica que divide a capital.',
+        '2026-03-29', '2026-03-29', '16:00', '18:00',
+        'Estádio Juvenal Lamartine (Frasqueirão), Natal - RN',
+        'esportivo', 'confirmado'
     ),
     (
-        'Expo Tech 2026',
-        'Exposição de tecnologia com demos de produtos inovadores, startups e grandes empresas de tecnologia.',
-        '2026-02-14', '2026-02-16', '10:00', '20:00',
-        'Expo Center Norte, São Paulo - SP',
-        'conferencia', 'concluido'
+        'Happy Hour DevNatal',
+        'Confraternização da comunidade de desenvolvimento de software de Natal. Networking, bate-papo e cerveja artesanal.',
+        '2026-04-24', '2026-04-24', '18:00', '22:00',
+        'Taproom Cervejaria Artesanal, Natal - RN',
+        'social', 'planejado'
+    ),
+    (
+        'Carnaval de Olinda 2026',
+        'Carnaval histórico nas ladeiras de Olinda. Os gigantes de Olinda, frevo nas ruas e uma das festas mais tradicionais do Brasil.',
+        '2026-02-14', '2026-02-17', '08:00', '02:00',
+        'Centro Histórico de Olinda - PE',
+        'festa', 'confirmado'
+    ),
+    (
+        'Workshop de Fotografia nas Dunas',
+        'Workshop prático de fotografia de paisagem e natureza nas deslumbrantes dunas da costa norte do RN.',
+        '2026-04-11', '2026-04-12', '06:00', '12:00',
+        'Dunas de Natal, Natal - RN',
+        'workshop', 'planejado'
     ),
 ]
 

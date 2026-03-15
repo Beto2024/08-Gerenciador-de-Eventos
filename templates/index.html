@@ -7,16 +7,16 @@
   <h1 class="text-3xl font-bold mb-2">
     <span class="gradient-text">Dashboard</span>
   </h1>
-  <p style="color:#94a3b8;">Visão geral dos seus eventos</p>
+  <p style="color:#64748b;">Visão geral dos seus eventos</p>
 </div>
 
 <!-- Stats cards -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
 
   <!-- Total -->
-  <div class="stat-card p-5 border" style="border-color:#334155;">
+  <div class="stat-card p-5 border" style="border-color:#e2e8f0;">
     <div class="flex items-center justify-between mb-3">
-      <span class="text-sm font-medium" style="color:#94a3b8;">Total de Eventos</span>
+      <span class="text-sm font-medium" style="color:#64748b;">Total de Eventos</span>
       <div class="w-9 h-9 rounded-lg flex items-center justify-center"
            style="background:rgba(59,130,246,0.15);">
         <svg class="w-5 h-5" style="color:#3b82f6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -25,16 +25,16 @@
         </svg>
       </div>
     </div>
-    <p class="text-3xl font-bold" style="color:#f1f5f9;">{{ stats.total }}</p>
+    <p class="text-3xl font-bold" style="color:#0f172a;">{{ stats.total }}</p>
     <a href="{{ url_for('events_list') }}" class="text-xs mt-1 inline-block" style="color:#3b82f6;">
       Ver todos →
     </a>
   </div>
 
   <!-- Today -->
-  <div class="stat-card p-5 border" style="border-color:#334155;">
+  <div class="stat-card p-5 border" style="border-color:#e2e8f0;">
     <div class="flex items-center justify-between mb-3">
-      <span class="text-sm font-medium" style="color:#94a3b8;">Eventos Hoje</span>
+      <span class="text-sm font-medium" style="color:#64748b;">Eventos Hoje</span>
       <div class="w-9 h-9 rounded-lg flex items-center justify-center"
            style="background:rgba(16,185,129,0.15);">
         <svg class="w-5 h-5" style="color:#10b981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,16 +43,16 @@
         </svg>
       </div>
     </div>
-    <p class="text-3xl font-bold" style="color:#f1f5f9;">{{ stats.today }}</p>
+    <p class="text-3xl font-bold" style="color:#0f172a;">{{ stats.today }}</p>
     <span class="text-xs mt-1 inline-block" style="color:#10b981;">
       Hoje, {{ today }}
     </span>
   </div>
 
   <!-- Upcoming -->
-  <div class="stat-card p-5 border" style="border-color:#334155;">
+  <div class="stat-card p-5 border" style="border-color:#e2e8f0;">
     <div class="flex items-center justify-between mb-3">
-      <span class="text-sm font-medium" style="color:#94a3b8;">Próximos Eventos</span>
+      <span class="text-sm font-medium" style="color:#64748b;">Próximos Eventos</span>
       <div class="w-9 h-9 rounded-lg flex items-center justify-center"
            style="background:rgba(139,92,246,0.15);">
         <svg class="w-5 h-5" style="color:#8b5cf6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,16 +61,16 @@
         </svg>
       </div>
     </div>
-    <p class="text-3xl font-bold" style="color:#f1f5f9;">{{ stats.upcoming }}</p>
+    <p class="text-3xl font-bold" style="color:#0f172a;">{{ stats.upcoming }}</p>
     <span class="text-xs mt-1 inline-block" style="color:#8b5cf6;">
       A partir de hoje
     </span>
   </div>
 
   <!-- Categories count -->
-  <div class="stat-card p-5 border" style="border-color:#334155;">
+  <div class="stat-card p-5 border" style="border-color:#e2e8f0;">
     <div class="flex items-center justify-between mb-3">
-      <span class="text-sm font-medium" style="color:#94a3b8;">Categorias Ativas</span>
+      <span class="text-sm font-medium" style="color:#64748b;">Categorias Ativas</span>
       <div class="w-9 h-9 rounded-lg flex items-center justify-center"
            style="background:rgba(245,158,11,0.15);">
         <svg class="w-5 h-5" style="color:#f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
         </svg>
       </div>
     </div>
-    <p class="text-3xl font-bold" style="color:#f1f5f9;">{{ stats.by_category | length }}</p>
+    <p class="text-3xl font-bold" style="color:#0f172a;">{{ stats.by_category | length }}</p>
     <span class="text-xs mt-1 inline-block" style="color:#f59e0b;">
       Tipos de eventos
     </span>
@@ -92,7 +92,7 @@
   <!-- Upcoming events -->
   <div class="lg:col-span-2">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-lg font-bold" style="color:#f1f5f9;">Próximos Eventos</h2>
+      <h2 class="text-lg font-bold" style="color:#0f172a;">Próximos Eventos</h2>
       <a href="{{ url_for('events_list') }}" class="text-sm" style="color:#3b82f6;">Ver todos</a>
     </div>
 
@@ -108,13 +108,13 @@
           <div class="w-3 h-3 rounded-full mt-1 flex-shrink-0" style="background:{{ cat[1] }};"></div>
           <div class="flex-1 min-w-0">
             <div class="flex items-start justify-between gap-2">
-              <p class="font-semibold text-sm truncate" style="color:#f1f5f9;">{{ event.title }}</p>
+              <p class="font-semibold text-sm truncate" style="color:#0f172a;">{{ event.title }}</p>
               <span class="badge text-xs flex-shrink-0"
                     style="background:{{ sta[1] }}22; color:{{ sta[1] }};">
                 {{ sta[0] }}
               </span>
             </div>
-            <div class="flex items-center gap-3 mt-1 text-xs" style="color:#94a3b8;">
+            <div class="flex items-center gap-3 mt-1 text-xs" style="color:#64748b;">
               <span>📅 {{ event.start_date | format_date }}</span>
               {% if event.start_time %}<span>🕐 {{ event.start_time | format_time }}</span>{% endif %}
               {% if event.location %}<span class="truncate">📍 {{ event.location }}</span>{% endif %}
@@ -139,7 +139,7 @@
   <div class="space-y-6">
     <!-- Events by category -->
     <div>
-      <h2 class="text-lg font-bold mb-4" style="color:#f1f5f9;">Por Categoria</h2>
+      <h2 class="text-lg font-bold mb-4" style="color:#0f172a;">Por Categoria</h2>
       <div class="card p-4 space-y-3">
         {% for item in stats.by_category %}
           {% set cat = category_dict.get(item.category, ('Outro', '#6b7280')) %}
@@ -147,10 +147,10 @@
             <div class="w-3 h-3 rounded-full flex-shrink-0" style="background:{{ cat[1] }};"></div>
             <div class="flex-1">
               <div class="flex justify-between text-sm mb-1">
-                <span style="color:#f1f5f9;">{{ cat[0] }}</span>
-                <span style="color:#94a3b8;">{{ item.count }}</span>
+                <span style="color:#0f172a;">{{ cat[0] }}</span>
+                <span style="color:#64748b;">{{ item.count }}</span>
               </div>
-              <div class="w-full rounded-full h-1.5" style="background:#334155;">
+              <div class="w-full rounded-full h-1.5" style="background:#e2e8f0;">
                 <div class="h-1.5 rounded-full"
                      style="background:{{ cat[1] }}; width:{{ (item.count / stats.total * 100) | int }}%;"></div>
               </div>
@@ -162,7 +162,7 @@
 
     <!-- Events by status -->
     <div>
-      <h2 class="text-lg font-bold mb-4" style="color:#f1f5f9;">Por Status</h2>
+      <h2 class="text-lg font-bold mb-4" style="color:#0f172a;">Por Status</h2>
       <div class="card p-4 space-y-2">
         {% for item in stats.by_status %}
           {% set sta = status_dict.get(item.status, ('Planejado', '#94a3b8')) %}
@@ -170,7 +170,7 @@
             <span class="badge" style="background:{{ sta[1] }}22; color:{{ sta[1] }};">
               {{ sta[0] }}
             </span>
-            <span class="font-semibold" style="color:#f1f5f9;">{{ item.count }}</span>
+            <span class="font-semibold" style="color:#0f172a;">{{ item.count }}</span>
           </div>
         {% endfor %}
       </div>
@@ -178,7 +178,7 @@
 
     <!-- Quick actions -->
     <div>
-      <h2 class="text-lg font-bold mb-4" style="color:#f1f5f9;">Ações Rápidas</h2>
+      <h2 class="text-lg font-bold mb-4" style="color:#0f172a;">Ações Rápidas</h2>
       <div class="card p-4 space-y-2">
         <a href="{{ url_for('events_create') }}" class="btn-primary w-full justify-center text-sm">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

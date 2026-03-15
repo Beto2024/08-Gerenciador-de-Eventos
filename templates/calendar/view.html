@@ -6,7 +6,7 @@
 <div class="flex items-center justify-between mb-6">
   <div>
     <h1 class="text-3xl font-bold gradient-text">Calendário</h1>
-    <p class="text-sm mt-1" style="color:#94a3b8;">Visualização mensal de eventos</p>
+    <p class="text-sm mt-1" style="color:#64748b;">Visualização mensal de eventos</p>
   </div>
   <a href="{{ url_for('events_create') }}" class="btn-primary text-sm">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,7 +28,7 @@
     </a>
 
     <div class="text-center">
-      <h2 class="text-xl font-bold" style="color:#f1f5f9;">{{ month_name }} {{ year }}</h2>
+      <h2 class="text-xl font-bold" style="color:#0f172a;">{{ month_name }} {{ year }}</h2>
       {% if year == today.year and month == today.month %}
         <span class="text-xs" style="color:#3b82f6;">Mês atual</span>
       {% endif %}
@@ -52,7 +52,7 @@
       <tr>
         {% for day_name in ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'] %}
         <th class="py-3 text-center text-xs font-semibold uppercase tracking-wide border-b"
-            style="color:#94a3b8; border-color:#334155; background:#1e293b;">
+            style="color:#64748b; border-color:#e2e8f0; background:#f1f5f9;">
           {{ day_name }}
         </th>
         {% endfor %}
@@ -73,7 +73,7 @@
             <div class="flex items-center justify-center mb-1">
               <span class="w-7 h-7 flex items-center justify-center text-sm font-medium rounded-full
                            {{ 'text-white font-bold' if is_today }}"
-                    style="{{ 'background:linear-gradient(135deg,#3b82f6,#8b5cf6); color:white;' if is_today else 'color:#94a3b8;' }}">
+                    style="{{ 'background:linear-gradient(135deg,#3b82f6,#8b5cf6); color:white;' if is_today else 'color:#64748b;' }}">
                 {{ day }}
               </span>
             </div>
@@ -89,7 +89,7 @@
               </a>
             {% endfor %}
             {% if day_events | length > 3 %}
-              <span class="text-xs" style="color:#94a3b8; display:block; padding:0 6px;">
+              <span class="text-xs" style="color:#64748b; display:block; padding:0 6px;">
                 +{{ day_events | length - 3 }} mais
               </span>
             {% endif %}
@@ -104,13 +104,13 @@
 
 <!-- Legend -->
 <div class="mt-6 card p-4">
-  <h3 class="text-sm font-semibold mb-3" style="color:#94a3b8;">Legenda de Categorias</h3>
+  <h3 class="text-sm font-semibold mb-3" style="color:#64748b;">Legenda de Categorias</h3>
   <div class="flex flex-wrap gap-3">
     {% for slug, label, color in categories %}
     <a href="{{ url_for('events_list', category=slug) }}"
        class="flex items-center gap-2 text-sm"
-       style="color:#94a3b8; text-decoration:none;"
-       onmouseover="this.style.color='#f1f5f9'" onmouseout="this.style.color='#94a3b8'">
+       style="color:#64748b; text-decoration:none;"
+       onmouseover="this.style.color='#0f172a'" onmouseout="this.style.color='#64748b'">
       <span class="w-3 h-3 rounded-sm flex-shrink-0" style="background:{{ color }};"></span>
       {{ label }}
     </a>
