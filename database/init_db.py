@@ -142,6 +142,20 @@ SEED_EVENTS = [
         'Dunas de Natal, Natal - RN',
         'workshop', 'planejado'
     ),
+    (
+        'IRONMAN 70.3 Rio de Janeiro',
+        'Prova de triathlon de longa distância (1,9 km de natação, 90 km de ciclismo e 21,1 km de corrida) com percurso icônico entre Copacabana e a Marina da Glória.',
+        '2026-08-09', '2026-08-09', '06:00', '16:00',
+        'Copacabana - Marina da Glória, Rio de Janeiro - RJ',
+        'esportivo', 'confirmado'
+    ),
+    (
+        'II Etapa Campeonato Brasileiro Sprint - Triathlon Mãe Malvada 2026',
+        'Segunda etapa do Campeonato Brasileiro de Sprint Triathlon. Competição de alto nível reunindo os melhores triatletas do país.',
+        '2026-04-18', '2026-04-18', '07:00', '14:00',
+        'Iate Clube Petrolina, Petrolina - PE',
+        'esportivo', 'confirmado'
+    ),
 ]
 
 
