@@ -19,17 +19,17 @@
   </div>
 
   <!-- Title -->
-  <h3 class="font-semibold text-base leading-snug" style="color:#334155;">
+  <h3 class="font-semibold text-base leading-snug" style="color:#e2e8f0;">
     <a href="{{ url_for('events_detail', event_id=event.id) }}"
        style="color:inherit; text-decoration:none;"
        onmouseover="this.style.color='#6366f1'"
-       onmouseout="this.style.color='#334155'">
+       onmouseout="this.style.color='#e2e8f0'">
       {{ event.title }}
     </a>
   </h3>
 
   <!-- Meta -->
-  <div class="space-y-1 text-sm" style="color:#64748b;">
+  <div class="space-y-1 text-sm" style="color:#8896b0;">
     <div class="flex items-center gap-2">
       <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,11 +60,11 @@
 
   <!-- Description preview -->
   {% if event.description %}
-  <p class="text-sm line-clamp-2" style="color:#64748b;">{{ event.description }}</p>
+  <p class="text-sm line-clamp-2" style="color:#8896b0;">{{ event.description }}</p>
   {% endif %}
 
   <!-- Actions -->
-  <div class="flex gap-2 mt-auto pt-2 border-t" style="border-color:#e2e8f0;">
+  <div class="flex gap-2 mt-auto pt-2 border-t" style="border-color:#1e2d45;">
     <a href="{{ url_for('events_detail', event_id=event.id) }}"
        class="btn-secondary text-xs py-1.5 px-3 flex-1 justify-center">
       Ver detalhes

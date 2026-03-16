@@ -1,12 +1,12 @@
 /* Custom styles for Gerenciador de Eventos */
 
 :root {
-  --bg-primary: #f8f9fc;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --border: #e2e8f0;
-  --text-primary: #334155;
-  --text-secondary: #64748b;
+  --bg-primary: #0b1120;
+  --bg-card: #131c31;
+  --bg-card-hover: #1a2744;
+  --border: #1e2d45;
+  --text-primary: #e2e8f0;
+  --text-secondary: #8896b0;
   --accent-teal: #6366f1;
   --accent-amber: #06b6d4;
   --accent-gold: #f59e0b;
@@ -42,14 +42,14 @@ body {
 }
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: #cbd5e1;
+  border-color: #2a3a55;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Form inputs */
 .form-input {
-  background: #ffffff;
+  background: #0b1120;
   border: 1px solid var(--border);
   color: var(--text-primary);
   border-radius: 8px;
@@ -60,13 +60,13 @@ body {
 }
 .form-input:focus {
   border-color: var(--accent-teal);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
-.form-input::placeholder { color: #94a3b8; }
+.form-input::placeholder { color: #5a6a80; }
 
 /* Select */
 select.form-input option {
-  background: #ffffff;
+  background: #131c31;
   color: var(--text-primary);
 }
 
@@ -103,7 +103,7 @@ select.form-input option {
   text-decoration: none;
 }
 .btn-secondary:hover {
-  border-color: #94a3b8;
+  border-color: #3a4a63;
   color: var(--text-primary);
 }
 
@@ -145,7 +145,7 @@ select.form-input option {
   vertical-align: top;
   transition: background 0.15s;
 }
-.calendar-cell:hover { background: rgba(0,0,0,0.02); }
+.calendar-cell:hover { background: rgba(255,255,255,0.03); }
 .calendar-cell.today { border-color: var(--accent-teal); }
 .calendar-cell.other-month { opacity: 0.35; }
 .calendar-event {
@@ -195,7 +195,7 @@ select.form-input option {
 /* Stats card gradient borders */
 .stat-card {
   position: relative;
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -234,7 +234,7 @@ select.form-input option {
 /* Loading spinner */
 .spinner {
   width: 20px; height: 20px;
-  border: 2px solid rgba(0,0,0,0.1);
+  border: 2px solid rgba(255,255,255,0.1);
   border-top-color: var(--accent-teal);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
