@@ -6,6 +6,8 @@ DATABASE = os.path.join(BASE_DIR, 'database', 'events.db')
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'gerenciador-eventos-secret-change-in-production')
 
+PORT = int(os.environ.get('PORT', 5000))
+
 EVENTS_PER_PAGE = 9
 
 CATEGORIES = [
