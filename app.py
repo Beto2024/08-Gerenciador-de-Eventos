@@ -278,5 +278,6 @@ def not_found(e):
 # ------------------------------------------------------------------
 
 if __name__ == '__main__':
-    debug = os.environ.get('FLASK_DEBUG', '0') == '1'
-    app.run(debug=debug, host='0.0.0.0', port=5000)
+    from config import PORT
+    debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug, host='0.0.0.0', port=PORT)
